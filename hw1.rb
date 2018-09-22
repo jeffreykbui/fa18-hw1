@@ -1,19 +1,33 @@
 def squared_sum(a, b)
   # Q1 CODE HERE
+  return (a + b) * (a + b)
 
 end
 
 def sort_array_plus_one(a)
   # Q2 CODE HERE
+  sorted = a.sort_by {|int| int}
+  return sorted.map {|int| int + 1}
 
 end
 
 def combine_name(first_name, last_name)
   # Q3 CODE HERE
+  return first_name + " " + last_name
 
 end
 
 def blockin_time(a)
+  class foobar
+    def self.baz(array)
+      arr_int = array.map {|string| string.to_i}
+      n = arr_int.map {|int| int + 2}
+      n = n.select {|i| i.even? && i.uniq}
+      n = n.select {|i| i.uniq}
+      n = n.reject {|i| i >= 10}
+      return n.reduce(:+)
+    end
+
   # DO NOT EDIT THIS CODE BELOW
   require './foobar'
   Foobar.baz a
@@ -49,4 +63,5 @@ def scrabble(word)
     z: 10,
   }
   # Q5 CODE HERE
+  return word.split.values.reduce(:+)
 end
